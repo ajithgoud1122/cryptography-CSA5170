@@ -1,0 +1,13 @@
+from collections import Counter
+
+ciphertext = '53‡‡†305))6*;4826)4‡.)4‡);806*;48†8¶60))85;;]8*;:‡*8†83\n(88)5*†;46(;88*96*?;8)*‡(;485);5*†2:*‡(;4956*2(5*—4)8¶8*\n;4069285);)6†8)4‡‡;1(‡9;48081;8:8‡1;48†85;4)485†528806*81 (‡9;48;(88;4(‡?34;48)4‡;161;:188;‡?;'
+
+# count the frequency of each character in the ciphertext
+freq = Counter(ciphertext)
+
+# sort the characters by frequency
+sorted_freq = freq.most_common()
+
+# print the characters and their frequencies
+for char, count in sorted_freq:
+    print(char, count)
