@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+void generate_key(char key[], int keylen);
+void encrypt_text(char plaintext[], char key[], int keylen);
+
+int main()
+{
+    char plaintext[100];
+    char key[26];
+    int keylen;
+
+    printf("Enter the plaintext to be encrypted: ");
+    fgets(plaintext, 100, stdin);
+
+    printf("Enter the key (up to 25 letters): ");
+    fgets(key, 26, stdin);
+
+    // Remove any newline characters from the input strings
+    strtok(plaintext, "\n");
+    strtok(key, "\n");
+
+    keylen = strlen(key);
+
+    generate_key(key, keylen);
+    encrypt_text(plaintext, key, keylen);
+
+    printf("The encrypted text is: %s", plaintext);
+
+    return 0;
+}
